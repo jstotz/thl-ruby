@@ -1,6 +1,6 @@
 require 'rubygems'
 require 'erubis'
-require 'lib/thl'
+require '../../lib/thl'
 
 # Instantiate a THL application wrapper
 thl = THL.new
