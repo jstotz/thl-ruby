@@ -8,13 +8,13 @@ Examples:
 
 Display tasks by list (all folders):
 
-  thl.lists.each do |list|
-    puts "#{list.name}:"
-    list.tasks.each do |task|
-      puts "* #{task.title}"
+    thl.lists.each do |list|
+      puts "#{list.name}:"
+      list.tasks.each do |task|
+        puts "* #{task.title}"
+      end
+      puts "\n"
     end
-    puts "\n"
-  end
 
 See the "examples" directory for more.
 
