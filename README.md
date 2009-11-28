@@ -7,7 +7,9 @@ Examples:
 ---------
 
 Display tasks by list (all folders):
-
+    require 'lib/thl'
+    thl = THL.new
+    
     thl.lists.each do |list|
       puts "#{list.name}:"
       list.tasks.each do |task|
