@@ -7,6 +7,7 @@ Examples:
 ---------
 
 Display tasks by list (all folders):
+
     require 'lib/thl'
     thl = THL.new
     
