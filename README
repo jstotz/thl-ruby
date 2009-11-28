@@ -5,14 +5,14 @@ A library to simplify interaction with The Hit List (http://www.potionfactory.co
 
 EXAMPLE:
 
-Display list names and task titles in all folders:
+Display tasks by list (all folders):
 
-thl = THL.new
 thl.lists.each do |list|
-  puts "#{list}:"
+  puts "#{list.name}:"
   list.tasks.each do |task|
-    puts task
+    puts "* #{task.title}"
   end
+  puts "\n"
 end
 
 See the "examples" directory for more.
