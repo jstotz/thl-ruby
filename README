@@ -1,0 +1,24 @@
+thl-ruby
+--------
+
+A library to simplify interaction with The Hit List (http://www.potionfactory.com/thehitlist/) using Ruby and the AppleScript Scripting Bridge.
+
+EXAMPLE:
+
+Display list names and task titles in all folders:
+
+thl = THL.new
+thl.lists.each do |list|
+  puts "#{list}:"
+  list.tasks.each do |task|
+    puts task
+  end
+end
+
+See the "examples" directory for more.
+
+TODO:
+
+* Package as a gem
+* Add documentation
+* Add more wrappers

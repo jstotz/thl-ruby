@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+	"http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<title>The Hit List</title>
+</head>
+
+<body>
+  <ul id="container">
+    <% for folder in folders %>
+      <ul class="folders">
+        <li class="folder">
+          <%= folder %>
+          <ul class="lists">
+            <% for list in folder.lists %>
+              <li class="list">
+                <%= list %>
+                <ul class="tasks">
+                  <% for task in list.tasks %>
+                    <li class="task"><%= task %></li>
+                  <% end %>
+                </ul>
+              </li>
+            <% end %>
+          </ul>
+        </li>
+      </ul>
+    <% end %>
+  </ul>
+</body>
+</html>
