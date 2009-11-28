@@ -5,6 +5,27 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
 <head>
 	<title>The Hit List</title>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript" charset="utf-8">
+	 $(document).ready(function(){
+     $('h1.folder').click(function() {
+       $(this).next('ul.lists').toggle();
+     });
+
+     $('h2.list').click(function() {
+       $(this).next('ul.tasks').toggle();
+     });
+   });
+	</script>
+	<style type="text/css" media="screen">
+	 ul.lists {
+     display: none;
+   }
+
+   ul.tasks {
+     display: none;
+   }
+	</style>
 </head>
 
 <body>
@@ -12,14 +33,19 @@
     <% for folder in folders %>
       <ul class="folders">
         <li class="folder">
-          <%= folder %>
+          <h1 class="folder"><%= folder %></h1>
           <ul class="lists">
             <% for list in folder.lists %>
               <li class="list">
-                <%= list %>
+                <h2 class="list"><%= list %></h2>
                 <ul class="tasks">
                   <% for task in list.tasks %>
                     <li class="task"><%= task %></li>
+                    <ul class="subtasks">
+                      <% for subtask in task.tasks %>
+                      <li class="subtask"><%= subtask %></li>
+                      <% end %>
+                    </ul>
                   <% end %>
                 </ul>
               </li>
